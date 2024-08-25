@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#818CF8',
+                        accent: '#F59E0B',
+                        danger: '#EF4444',
+                        success: '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-blue-500 via-purple-500 min-h-screen flex items-center justify-center">
+    <div class="w-[600px]">
+        <form class="todo-form flex items-end justify-between bg-white rounded-lg shadow-lg p-5 space-x-4">
+            <div class="flex flex-col flex-grow">
+                <label class="text-gray-700 text-sm mb-2">Upload Image</label>
+                <div class="flex items-center space-x-2">
+                    <input class="hidden chosen-img" type="file" id="file-input">
+                    <label for="file-input" class="cursor-pointer">
+                        <img src="./images/upload.svg" alt="Upload" width="30" height="30">
+                    </label>
+                    <input class="todo-input flex-grow p-2 rounded-lg border border-gray-300 outline-none focus:border-primary focus:ring-primary focus:ring-1" type="text" placeholder="Enter your to-do">
+                </div>
+            </div>
+            <button class="bg-primary text-white py-2 px-4 rounded-lg hover:bg-secondary transition-all" type="submit">Add</button>
+        </form>
+        <div class="flex justify-center mt-5">
+            <img class="upload-img rounded-lg shadow-md" src="./images/empty.png" alt="Uploaded Image" width="200" height="200">
+        </div>
+        <div class="flex items-center justify-between bg-white rounded-lg shadow-lg p-3 mt-5 space-x-4">
+            <button class="count-btn flex-1 p-2 bg-primary text-white rounded-lg hover:bg-secondary transition-all">All (<span class="all-count">0</span>)</button>
+            <button class="complated-cound-btn flex-1 p-2 bg-success text-white rounded-lg hover:bg-green-600 transition-all">Completed (<span class="complated-cound">0</span>)</button>
+            <button class="Uncomplated-cound-btn flex-1 p-2 bg-accent text-white rounded-lg hover:bg-yellow-600 transition-all">Incomplete (<span class="Uncomplated-cound">0</span>)</button>
+        </div>
+        <ul class="todo-list bg-white rounded-lg shadow-lg p-4 mt-5 space-y-2">
+        </ul>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
